@@ -9,22 +9,8 @@ import bodyParser from 'body-parser'   // really important otherwise the body of
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // get OPENAI_API_KEY from GitHub secrets
-//const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-// get the API key from the json file
-var openai= null;
-fs.readFile('openai_key.json', (err, data) => {
-  // change the data to a json object and assign it to the openai variable
-  data = JSON.parse(data);
-  // get the api key from the json object
-  let key = data.apiKey;
-  console.log("data:"+data)
-  console.log(key)
-  openai = new OpenAI({apiKey: key});
-});
-
-
-
-
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+openai = new OpenAI({apiKey: OPENAI_API_KEY});
 
 // Middleware to parse JSON payloads in POST requests
 app.use(express.json());
