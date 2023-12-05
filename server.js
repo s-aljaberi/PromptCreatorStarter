@@ -29,7 +29,7 @@ app.post('/test-prompt', async(req, res) => {
     const style = req.body.style;
     const tone = req.body.tone;
     const language = req.body.language;
-    res.json({  message: "Write a 100 word article on this topic: " + topic + "using this tone: " + tone + " in this style: " + style + " in this language: " + language });
+    res.json({  message: "Write a two paragraph article on this topic: " + topic + "using this tone: " + tone + " in this style: " + style + " in this language: " + language });
 });
 // Existing imports and setup here...
 
