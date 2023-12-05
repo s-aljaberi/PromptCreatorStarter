@@ -46,7 +46,7 @@ app.post('/prompt', async(req, res) => {
   console.log("topic: " + topic)
 
   try {
-      let prompt = "Write aproximately 100 word article on this topic: " + topic + " using this tone: " + tone + " in this style: " + style + " in this language: " + language;
+      let prompt = "Write aproximately two paragraph article on this topic: " + topic + " using this tone: " + tone + " in this style: " + style + " in this language: " + language;
       console.log("prompt: " + prompt)
       await openai.completions.create({
             model: "text-davinci-003",
